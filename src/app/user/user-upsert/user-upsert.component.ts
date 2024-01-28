@@ -53,7 +53,7 @@ export class UserUpsertComponent implements OnInit {
   loadUserData() {
     this.userService.getUser(this.userId).subscribe(
       (data: any) => {
-        debugger
+        
         this.userForm.patchValue({
           id: data.id,
           firstName: data.FirstName,
@@ -70,7 +70,7 @@ export class UserUpsertComponent implements OnInit {
   }
 
   onSubmit() {
-    debugger
+    
     if (this.userForm.invalid) {
       this.isshowSubmitError = true;
       return;
@@ -96,6 +96,7 @@ export class UserUpsertComponent implements OnInit {
       this.userService.updateUser(this.userId, user).subscribe({
         next: (data: any) => {
           var result = data;
+          this.toastr.success('User updated successfuly');
           this.isshowSubmitError = false;
           this.router.navigate(['/User-List']);
         },
@@ -107,6 +108,7 @@ export class UserUpsertComponent implements OnInit {
       this.userService.AddUser(user).subscribe({
         next: (data) => {
           var result = data;
+          this.toastr.success('User added successfuly');
           this.isshowSubmitError = false;
           this.router.navigate(['/User-List']);
 

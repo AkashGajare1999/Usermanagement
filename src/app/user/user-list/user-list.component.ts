@@ -17,6 +17,7 @@ export class UserListComponent implements OnInit {
   getAllUsers() {
     this.userService.getAllUsers().subscribe({
       next: (data: any) => {
+        
         this.userList = data;
       },
       error: (err) => {
@@ -26,15 +27,15 @@ export class UserListComponent implements OnInit {
   }
 
   editUser(userId: any) {
-    debugger
+    
     this.router.navigate(['/User-Upsert', userId])
   }
 
   deleteUser(userId: any) {
-    debugger
+    
     this.userService.deleteUser(userId).subscribe({
       next: (data: any) => {
-        debugger
+        
         var result = data;
         console.log(result);
         this.ngOnInit();
