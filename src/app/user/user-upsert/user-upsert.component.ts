@@ -45,7 +45,7 @@ export class UserUpsertComponent implements OnInit {
         this.userList = data;
       },
       error: (err) => {
-        alert(err);
+        this.toastr.error(err);
       }
     })
   }
@@ -70,7 +70,7 @@ export class UserUpsertComponent implements OnInit {
   }
 
   onSubmit() {
-    
+  
     if (this.userForm.invalid) {
       this.isshowSubmitError = true;
       return;
@@ -96,25 +96,25 @@ export class UserUpsertComponent implements OnInit {
       this.userService.updateUser(this.userId, user).subscribe({
         next: (data: any) => {
           var result = data;
-          this.toastr.success('User updated successfuly');
+          this.toastr.success('User updated successfuly !');
           this.isshowSubmitError = false;
           this.router.navigate(['/User-List']);
         },
         error: (err) => {
-          alert(err);
+          this.toastr.error(err);
         }
       });
     } else {
       this.userService.AddUser(user).subscribe({
         next: (data) => {
           var result = data;
-          this.toastr.success('User added successfuly');
+          this.toastr.success('User added successfuly !');
           this.isshowSubmitError = false;
           this.router.navigate(['/User-List']);
 
         },
         error: (err) => {
-          alert(err);
+          this.toastr.error(err);
         }
       });
     }
