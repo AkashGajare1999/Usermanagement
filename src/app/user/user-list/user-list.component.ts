@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UserListComponent implements OnInit {
   userList: any[]; // your user data is of type 'any'
-  constructor(private userService: UserServiceService, private router: Router) { }
+  constructor(private userService: UserServiceService, private router: Router,private toastr: ToastrService) { }
   ngOnInit() {
     this.getAllUsers();
   }
@@ -17,31 +17,31 @@ export class UserListComponent implements OnInit {
   getAllUsers() {
     this.userService.getAllUsers().subscribe({
       next: (data: any) => {
-        
         this.userList = data;
       },
       error: (err) => {
-        alert(err);
+        this.toastr.error(err);
       }
     })
   }
 
   editUser(userId: any) {
-    
+    debugger
     this.router.navigate(['/User-Upsert', userId])
   }
 
   deleteUser(userId: any) {
-    
+    debugger
     this.userService.deleteUser(userId).subscribe({
       next: (data: any) => {
-        
+        debugger
         var result = data;
+        this.toastr.success('User deleted successfuly !');
         console.log(result);
         this.ngOnInit();
       },
       error: (err) => {
-        alert(err);
+        this.toastr.error(err);
       }
     });
   }
