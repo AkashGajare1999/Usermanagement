@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="topbar my-4">
+        <h2 *ngIf="isEditMode===false">Add User</h2>
+        <h2 *ngIf="isEditMode">Update User</h2>
+        <div class="addsection">
+            <a class="btn-primary" (click)="Back()"><i class="fa-solid fa-arrow-left"
+                    style="margin-right: 8px;"></i>Back To List</a>
+        </div>
+    </div>
+    <div class="UserData">
+        <form [formGroup]="userForm">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="FirstName"
+                            formControlName="firstName">
+                        <div *ngIf="isshowSubmitError && this.fc['firstName'].errors['required']">
+                            <span class="errors">FirstName is required.</span>
+                        </div>
+                        <div *ngIf="isshowSubmitError && this.fc['firstName'].errors['pattern']">
+                            <span class="errors">only Alpha characters.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput2" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="LastName"
+                            formControlName="lastName">
+                            <div *ngIf="isshowSubmitError && this.fc['lastName'].errors['required']">
+                                <span class="errors">LastName is required.</span>
+                            </div>
+                            <div *ngIf="isshowSubmitError && this.fc['lastName'].errors['pattern']">
+                                <span class="errors">only Alpha characters.</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput3" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Phone"
+                            formControlName="phone" maxlength="10">
+                            <div *ngIf="isshowSubmitError && this.fc['phone'].errors['required']">
+                                <span class="errors">Phone number is required.</span>
+                            </div>
+                            <div *ngIf="isshowSubmitError && this.fc['phone'].errors['pattern']">
+                                <span class="errors">only number allow.</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput4" placeholder="Email"
+                            formControlName="email">
+                            <div *ngIf="isshowSubmitError && this.fc['email'].errors['required']">
+                                <span class="errors">Email is required.</span>
+                            </div>
+                            <div *ngIf="this.fc['email'].errors['email']">
+                                <span class="errors">Enter valid email.</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput5" class="form-label">Address</label>
+                        <textarea class="form-control" id="exampleFormControlInput5" rows="3" placeholder="Address"
+                            formControlName="address"></textarea>
+                            <div *ngIf="isshowSubmitError && this.fc['address'].errors['required']">
+                                <span class="errors">Address is required.</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+
+                </div>
+            </div>
+        </form>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary mx-4" (click)="onSubmit()">Save</button>
+            <button type="button" class="btn btn-secondary" *ngIf="isEditMode===false"
+                (click)="ResetForm()">Reset</button>
+        </div>
+    </div>
+</div>

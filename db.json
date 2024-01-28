@@ -1,0 +1,28 @@
+{
+  "User": [
+    {
+      "FirstName": "kapil",
+      "LastName": "mehtre",
+      "Address": "my Address is chennai",
+      "Email": "nidh@gmail.com",
+      "Phone": "9658745213",
+      "id": 2
+    },
+    {
+      "FirstName": "akash",
+      "LastName": "gajare",
+      "Address": "bhosari,pune-39\nmaharashtra",
+      "Email": "kapil@gmail.com",
+      "Phone": "9856324578",
+      "id": 3
+    },
+    {
+      "FirstName": "sasa",
+      "LastName": "SAsaS",
+      "Address": "sasasdsa",
+      "Email": "akashh@gmail.com",
+      "Phone": "9856324578",
+      "id": 4
+    }
+  ]
+}

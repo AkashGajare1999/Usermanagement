@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import 'ngx-toastr/toastr';
+body
+{
+    background: url(/assets/images/bg-intro-desktop.png) ;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}

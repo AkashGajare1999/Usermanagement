@@ -1,0 +1,46 @@
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+    padding: 14px;
+
+}
+
+.topbar h2 {
+
+    font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 0px;
+    color: #0d6efd;
+
+}
+
+.addsection a {
+
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid;
+    font-weight: 500;
+}
+
+.addsection a:hover {
+    color: #0d6efd;
+    background-color: #fff;
+}
+
+.addsection {
+    margin-top: 8px;
+}
+
+.btn-primary {
+    color: #0d6efd;
+    background-color: #fff;
+}
+
+.UserData {
+    box-shadow: 0px 0px 7px -1px #808080bf;
+    padding: 30px;
+    border-radius: 8px;
+}

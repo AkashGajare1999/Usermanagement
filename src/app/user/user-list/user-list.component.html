@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="topbar my-4">
+        <h2>Users Data</h2>
+<div class="addsection">
+    <a class="btn-primary" (click)="AddUser()"> <i class="fa-solid fa-plus"></i> Add User</a>
+</div>
+    </div>
+    <div class="UserData">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userData of userList;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{userData.FirstName}} {{userData.LastName}}</td>
+                <td>{{userData.Email}}</td>
+                <td>{{userData.Phone}}</td>
+                <td><i class="fas fa-edit" style="cursor: pointer;color: #008000b8; margin-right: 1.5rem!important;" (click)="editUser(userData.id);"></i>
+                    <i class="fa-solid fa-trash" style="cursor: pointer;color: #ff00009e;" (click)="deleteUser(userData.id);"></i>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
